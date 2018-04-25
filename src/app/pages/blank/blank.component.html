@@ -1,12 +1,19 @@
-<!--<div style="width: 200px;">
-    <ag-grid-angular #agGrid style="width: 100%; height: 200px;" class="ag-theme-balham"
-                 [gridOptions]="gridOptions">
-    </ag-grid-angular>
-</div>-->
-<div style="width: 200px;">
-<ag-grid-angular #agGrid style="width: 100%; height: 200px;" class="ag-theme-balham-dark"
-                 [gridOptions]="gridOptions">
+<ag-grid-angular style="height: 525px; width: 100%;" class="ag-theme-balham-dark"
+
+                 [gridOptions]="gridOptions"
+                 [columnDefs]="columnDefs"
+                 [rowData]="rowData"
+
+                 [icons]="icons"
+
+                 enableColResize
+                 enableSorting
+                 enableFilter
+                 groupHeaders
+                 suppressRowClickSelection
+                 toolPanelSuppressGroups
+                 toolPanelSuppressValues
+                 rowSelection="multiple"
+
+                 (gridReady)="onReady($event)">
 </ag-grid-angular>
-</div>
-
-

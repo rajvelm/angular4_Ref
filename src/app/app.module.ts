@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -15,6 +15,10 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { SharedModule } from './shared/shared.module';
+
+import {AgGridModule} from "ag-grid-angular/main";
+
+//import {DataService} from "./pages/blank/data.service";
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,7 +45,8 @@ export function createTranslateLoader(http: Http) {
       }
     }),
     NgbModule.forRoot(),
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+	AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FileUploadModule } from 'ng2-file-upload/ng2-file-upload';
 import { TreeModule } from 'angular-tree-component';
@@ -29,7 +30,8 @@ import { WizardComponent } from './wizard/wizard.component';
     CustomFormsModule,
     TreeModule,
     TextMaskModule,
-    FileUploadModule
+    FileUploadModule,
+	NgbModule
   ],
   declarations: [BasicComponent, MasksComponent, EditorComponent, ValidationComponent, UploadComponent, TreeComponent, WizardComponent]
 })
