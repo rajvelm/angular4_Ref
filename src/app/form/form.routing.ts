@@ -7,6 +7,7 @@ import { ValidationComponent } from './validation/validation.component';
 import { UploadComponent } from './upload/upload.component';
 import { TreeComponent } from './tree/tree.component';
 import { WizardComponent } from './wizard/wizard.component';
+import { ReportComponent } from './report/report.component';
 
 export const FormRoutes: Routes = [
   {
@@ -24,6 +25,13 @@ export const FormRoutes: Routes = [
       component: WizardComponent,
       data: {
         heading: 'Form Wizard'
+      }
+    },
+	{
+      path: 'report',
+      component: ReportComponent,
+      data: {
+        heading: 'AG Grid'
       }
     },
 	{

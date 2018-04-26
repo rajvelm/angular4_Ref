@@ -179,6 +179,10 @@ const MENUITEMS = [
         state: 'wizard',
         name: 'WIZARD'
       },
+	  {
+        state: 'report',
+        name: 'Report'
+      },
       {
         state: 'masks',
         name: 'MASKS'

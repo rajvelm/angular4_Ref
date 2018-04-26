@@ -1,0 +1,25 @@
+<!--<h3>Rajvel Details with Observable</h3>
+<ul>
+  <li *ngFor="let car of observablecars | async" >
+    Make: {{car.make}}, Name: {{car.model}}
+  </li>
+</ul>
+
+<h3>car Details after "subscribe" to Observable </h3>
+<ul>
+  <li *ngFor="let car of cars" >
+    M: {{car.make}}, Name: {{car.model}}
+  </li>
+</ul>
+
+<div *ngIf="errorMessage"> {{errorMessage}} </div> -->
+
+<ag-grid-angular 
+    style="width: 500px; height: 200px;" 
+    class="ag-theme-balham"
+	[enableSorting]="true"
+    [enableFilter]="true"
+    [rowData]="cars" 
+    [columnDefs]="columnDefs"
+    >
+</ag-grid-angular>

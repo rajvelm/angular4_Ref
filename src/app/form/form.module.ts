@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgGridModule } from 'ag-grid-angular';
+import { HttpModule } from '@angular/http';
+
 
 import { FileUploadModule } from 'ng2-file-upload/ng2-file-upload';
 import { TreeModule } from 'angular-tree-component';
@@ -18,7 +21,8 @@ import { ValidationComponent } from './validation/validation.component';
 import { UploadComponent } from './upload/upload.component';
 import { TreeComponent } from './tree/tree.component';
 import { WizardComponent } from './wizard/wizard.component';
-
+import { ReportComponent } from './report/report.component';
+import { CarService } from './report/cars.service';
 
 @NgModule({
   imports: [
@@ -31,9 +35,12 @@ import { WizardComponent } from './wizard/wizard.component';
     TreeModule,
     TextMaskModule,
     FileUploadModule,
-	NgbModule
+	NgbModule,
+	AgGridModule.withComponents([]),
+	HttpModule
   ],
-  declarations: [BasicComponent, MasksComponent, EditorComponent, ValidationComponent, UploadComponent, TreeComponent, WizardComponent]
+  declarations: [BasicComponent, MasksComponent, EditorComponent, ValidationComponent, UploadComponent, TreeComponent, WizardComponent, ReportComponent],
+  providers: [CarService]
 })
 
 export class FormModule {}
