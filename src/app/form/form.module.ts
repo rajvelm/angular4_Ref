@@ -22,7 +22,8 @@ import { UploadComponent } from './upload/upload.component';
 import { TreeComponent } from './tree/tree.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { ReportComponent } from './report/report.component';
-import { CarService } from './report/cars.service';
+//import { CarService } from './report/cars.service';
+
 
 @NgModule({
   imports: [
@@ -40,7 +41,7 @@ import { CarService } from './report/cars.service';
 	HttpModule
   ],
   declarations: [BasicComponent, MasksComponent, EditorComponent, ValidationComponent, UploadComponent, TreeComponent, WizardComponent, ReportComponent],
-  providers: [CarService]
+  providers: []
 })
 
 export class FormModule {}

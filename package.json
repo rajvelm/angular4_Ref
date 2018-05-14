@@ -36,6 +36,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "2.4.1",
     "d3": "^4.8.0",
+    "daypilot-pro-angular": "https://npm.daypilot.org/daypilot-pro-angular/trial/8.3.2778.tar.gz",
     "dragula": "3.7.2",
     "intl": "^1.2.5",
     "ng-sidebar": "5.1.0",

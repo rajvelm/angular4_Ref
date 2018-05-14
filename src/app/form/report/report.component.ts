@@ -1,34 +1,80 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Observable } from 'rxjs';
-
+import {Http,HttpModule,Response,RequestOptions } from '@angular/http'
 import { CarService } from './cars.service';
 import { Car } from './car';
+import { GridOptions } from "ag-grid";
 
 @Component({
    selector: 'app-report',
-   templateUrl: './report.component.html'
+   templateUrl: './report.component.html',
+   providers: [CarService] 
 })
 export class ReportComponent implements OnInit { 
-   observableCars: Observable<Car[]>
-   cars: Car[];
-   errorMessage: String;
-   columnDefs = [
+   
+	rowData:any;
+	columnDefs:any;
+   constructor(public carService: CarService,private _http:Http) {
+	/* this.columnDefs = [
         {headerName: 'Make', field: 'make' },
         {headerName: 'Model', field: 'model' },
         {headerName: 'Price', field: 'price'}
+    ];  */
+	this.columnDefs = [
+        {headerName: 'ID', field: 'id' },
+        {headerName: 'First Name', field: 'first_name' },
+        {headerName: 'Last NAme', field: 'last_name'}
     ];
-   constructor(private carService: CarService) { }
-   ngOnInit(): void 
-   {
-         this.observableCars = this.carService.getCarsWithObservable();
-	this.observableCars.subscribe(
-            cars => this.cars = cars,
-            error =>  this.errorMessage = <any>error
-			);
    }
+   gridOptions: GridOptions;
+  private rowSelection;
+  private gridApi;
+  private gridColumnApi;
+  
+   //someProperty:String='';
+   ngOnInit()
+   {
+	   this.carService.getCars().subscribe((data)=>{this.rowData=data.data});
+	   //this.cars=this.observableCars
+	//this.observableCars.subscribe(
+     //       cars => this.cars = cars,
+       //     error =>  this.errorMessage = <any>error
+		//	);
+			console.log(this.rowData);
+		//this.someProperty=this.carService.myData();
+   }
+   onAddRow() 
+   {
+     const req = this._http.post('https://reqres.in/api/users', {
+      name: 'foo',
+      job: 'bar'
+    })
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log("Error occured");
+        }
+      );
+  }
+  onRemoveSelected()
+  {
+	  alert("Delete");
+  }
+  updateItems()
+  {
+	  alert("Update");
+  }
 } 
 
-
+function createNewRowData() {
+  var newData = {
+    name: "Adam ",
+    job:"test"
+  };
+  return newData;
+}
 
 
 /*import { Component, OnInit } from '@angular/core';

@@ -1,3 +1,4 @@
+<p>{{someProperty}}</p>
 <!--<h3>Rajvel Details with Observable</h3>
 <ul>
   <li *ngFor="let car of observablecars | async" >
@@ -12,14 +13,36 @@
   </li>
 </ul>
 
-<div *ngIf="errorMessage"> {{errorMessage}} </div> -->
+-->
+<div class="well" style="">
+<div >
+  <button type="button" class="btn btn-success" (click)="onAddRow()">
+   <span class="glyphicon glyphicon-plus"></span> Add New Row
+ </button>
+ <button type="button" class="btn btn-info" (click)="updateItems()">
+   <span class="glyphicon glyphicon-pencil"></span> Update Data
+ </button>
+ <button type="button" class="btn btn-danger" (click)="onRemoveSelected()">
+   <span class="glyphicon glyphicon-trash"></span> Delete Selected
+ </button>
+</div>
+</div>
 
 <ag-grid-angular 
     style="width: 500px; height: 200px;" 
     class="ag-theme-balham"
 	[enableSorting]="true"
     [enableFilter]="true"
-    [rowData]="cars" 
+    [rowData]="rowData" 
     [columnDefs]="columnDefs"
+	[pagination]="true" 
+	[paginationAutoPageSize]="true" 
+	[gridOptions]="gridOptions" 
+	[animateRows]="true" 
+	[rowSelection]="rowSelection"
     >
 </ag-grid-angular>
+
+ 
+
+<!--<div *ngIf="errorMessage"> {{errorMessage}} </div>-->
